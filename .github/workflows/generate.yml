@@ -25,10 +25,16 @@ jobs:
 
       - name: Check CN ip list size
         run: |
-          echo "pwd:$PWD"
-          cat ./address-list.rsc
-          [[ $(wc -l < ./address-list.rsc) < 3000 ]] && exit 1
-          [[ $(wc -l < ./address-list.ipv6.rsc) < 1000 ]] && exit 2
+          if [[ $(wc -l ./address-list.rsc) < 3000 ]];
+          then
+          exit 1
+          fi
+          
+        
+          if [[ $(wc -l < ./address-list.ipv6.rsc) < 1000 ]];
+          then
+          exit 2
+          fi
 
       - name: Check current event and ref
         run: |
