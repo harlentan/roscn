@@ -38,7 +38,7 @@ jobs:
 
       - name: Check current event and ref
         run: |
-          echo "The current github event is {{$github.event_name}}, git branch is ${{github.ref}}"
+          echo "The current github event is ${{github.event_name}}, git branch is ${{github.ref}}"
 
       - name: Checkout ip-lists branch
         uses: actions/checkout@v3
