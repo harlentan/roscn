@@ -20,8 +20,8 @@ jobs:
       - name: Generate
         run: |
           rm *.txt *.rsc 
-          ./scripts/generate.sh
-          ./scripts/generate_ros.sh
+          bash ./scripts/generate.sh
+          bash ./scripts/generate_ros.sh
 
       - name: Check CN ip list size
         run: |
