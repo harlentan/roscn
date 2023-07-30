@@ -5,7 +5,7 @@ name: GenerateCNIP
 on:
   workflow_dispatch:
   schedule:
-    - cron: '05 11 * * *'
+    - cron: '0 17 * * *'
 
 jobs:
   build:
@@ -42,13 +42,13 @@ jobs:
 
       - name: Checkout ip-lists branch
         uses: actions/checkout@v3
-        #if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
         with:
           ref: ip-lists
           path: ip-lists
 
       - name: Upload
-        #if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
         run: |
           rm ip-lists/*.rsc || true
           mv ./*.rsc ip-lists/
