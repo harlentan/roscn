@@ -1,0 +1,49 @@
+# This is a basic workflow that is manually triggered
+
+name: GenerateCNIP
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '48 10 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Initialization environment
+        run: git openssh-client ipcalc grep
+      
+      - name: Generate
+        run: |
+          rm *.txt *.rsc 
+          ./scripts/generate.sh
+          ./scripts/generate_ros.sh
+
+      - name: Check CN ip list size
+        [[ $(wc -l result/china.txt) < 3000 ]] && exit 1
+        [[ $(wc -l result/china6.txt) < 1000 ]] && exit 2
+
+      - name: Check current event and ref
+        run: |
+          echo "The current github event is {{$github.event_name}}, git branch is ${{github.ref}}"
+
+      - name: Checkout ip-lists branch
+          uses: actions/checkout@v3
+          if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
+          with:
+            ref: ip-lists
+            path: ip-lists
+
+      - name: Upload
+        if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
+        run: |
+          rm ./*.txt
+          git config user.name GitHub Actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "update $(date +%Y-%m-%d)"
+          git push -q
