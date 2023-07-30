@@ -5,7 +5,7 @@ name: GenerateCNIP
 on:
   workflow_dispatch:
   schedule:
-    - cron: '48 10 * * *'
+    - cron: '55 10 * * *'
 
 jobs:
   build:
