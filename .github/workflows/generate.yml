@@ -25,6 +25,7 @@ jobs:
 
       - name: Check CN ip list size
         run: |
+          echo "pwd:$PWD"
           [[ $(wc -l ./address-list.rsc) < 3000 ]] && exit 1
           [[ $(wc -l ./address-list.ipv6.rsc) < 1000 ]] && exit 2
 
