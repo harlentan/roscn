@@ -50,7 +50,9 @@ jobs:
       - name: Upload
         #if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
         run: |
-          rm ./*.txt
+          rm ip-lists/*.rsc
+          mv ./*.rsc ip-lists/
+          cd ip-lists
           git config user.name GitHub Actions
           git config user.email github-actions@github.com
           git add .
