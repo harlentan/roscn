@@ -14,9 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Setup upterm session
-        uses: csexton/debugger-action@master
-
       - name: Initialization environment
         run: sudo apt-get install -y git openssh-client ipcalc grep
       
@@ -29,8 +26,8 @@ jobs:
       - name: Check CN ip list size
         run: |
           echo "pwd:$PWD"
-          [[ $(wc -l ./address-list.rsc) < 3000 ]] && exit 1
-          [[ $(wc -l ./address-list.ipv6.rsc) < 1000 ]] && exit 2
+          [[ $(wc -l < ./address-list.rsc) < 3000 ]] && exit 1
+          [[ $(wc -l < ./address-list.ipv6.rsc) < 1000 ]] && exit 2
 
       - name: Check current event and ref
         run: |
