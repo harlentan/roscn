@@ -10,7 +10,7 @@ on:
     
   workflow_dispatch:
   schedule:
-    - cron: '40 13 * * *'
+    - cron: '0 14 * * *'
 
 jobs:
   build:
@@ -59,7 +59,7 @@ jobs:
           mv ./*.rsc ip-lists/
           cd ip-lists
           md5sum ./address-list.rsc | awk '{print $1}' > ./md5sum
-          md5sum ./address-list.ipv6.rsc awk '{print $1}' > ./md5sum-v6
+          md5sum ./address-list.ipv6.rsc | awk '{print $1}' > ./md5sum-v6
           if [[ $(git status .) != *"nothing to commit"* ]]; then
           git config user.name GitHub Actions
           git config user.email github-actions@github.com
