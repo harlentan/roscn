@@ -41,7 +41,7 @@ jobs:
           exit 2
           fi
 
-      - name: Check current event and ref
+      - name: Check current github event and ref
         run: |
           echo "The current github event is ${{github.event_name}}, git branch is ${{github.ref}}"
 
