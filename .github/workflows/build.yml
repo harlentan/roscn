@@ -55,9 +55,11 @@ jobs:
       - name: Upload
         if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
         run: |
-          rm ip-lists/*.rsc || true
+          rm ip-lists/*.rsc ip-lists/md5sum ip-lists/md5sum-v6|| true
           mv ./*.rsc ip-lists/
           cd ip-lists
+          md5sum ./address-list.rsc > ./md5sum
+          md5sum ./address-list.ipv6.rsc > ./md5sum-v6
           if [[ $(git status .) != *"nothing to commit"* ]]; then
           git config user.name GitHub Actions
           git config user.email github-actions@github.com
