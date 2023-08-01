@@ -53,17 +53,25 @@ jobs:
           path: ip-lists
 
       - name: Upload
+        uses: actions/setup-node@v3 
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
         if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
         run: |
-          rm ip-lists/*.rsc ip-lists/md5sum ip-lists/md5sum-v6 || true
-          mv ./*.rsc ip-lists/
+          rm -rf ip-lists/ros || true
+          mkdir ip-lists/ros || true
+          mv ./*.rsc ip-lists/ros/
           cd ip-lists
-          md5sum ./address-list.rsc | awk '{print $1}' > ./CNIPv4Md5
-          md5sum ./address-list.ipv6.rsc | awk '{print $1}' > ./CNIPv6Md5
+          md5sum ./address-list.rsc | awk '{print $1}' > ./ros/CNIPv4Md5
+          md5sum ./address-list.ipv6.rsc | awk '{print $1}' > ./ros/CNIPv6Md5
           if [[ $(git status .) != *"nothing to commit"* ]]; then
-          git config user.name GitHub Actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "update $(date +%Y-%m-%d)"
-          git push -q
+            git config user.name GitHub Actions
+            git config user.email github-actions@github.com
+            git add .
+            git commit -m "update $(date +%Y-%m-%d)"
+            npm version patch
+            git push -q
           fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
