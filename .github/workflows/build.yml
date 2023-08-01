@@ -18,6 +18,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Setup Node and NPM
+        uses: actions/setup-node@v3 
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+
       
       - name: Initialization environment
         run: sudo apt-get install -y git openssh-client ipcalc grep
@@ -53,10 +60,6 @@ jobs:
           path: ip-lists
 
       - name: Upload
-        uses: actions/setup-node@v3 
-        with:
-          node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org'
         if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
         run: |
           rm -rf ip-lists/ros || true
@@ -71,6 +74,7 @@ jobs:
             git add .
             git commit -m "update $(date +%Y-%m-%d)"
             npm version patch
+            npm publish
             git push -q
           fi
         env:
