@@ -1,0 +1,19 @@
+{
+  "name": "roscn",
+  "version": "1.0.0",
+  "description": "ros cn ips rsc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harlentan/roscn.git"
+  },
+  "author": "harlen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harlentan/roscn/issues"
+  },
+  "homepage": "https://github.com/harlentan/roscn#readme"
+}
