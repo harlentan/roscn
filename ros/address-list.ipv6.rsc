@@ -1192,7 +1192,7 @@ add address=2404:3740::/32 disabled=no list=novpn.ipv6
 add address=2404:37c0::/32 disabled=no list=novpn.ipv6
 add address=2404:3840::/32 disabled=no list=novpn.ipv6
 add address=2404:3940::/32 disabled=no list=novpn.ipv6
-add address=2404:3b00::/32 disabled=no list=novpn.ipv6
+add address=2404:3b00::/34 disabled=no list=novpn.ipv6
 add address=2404:3bc0::/32 disabled=no list=novpn.ipv6
 add address=2404:3c40::/32 disabled=no list=novpn.ipv6
 add address=2404:3f40::/32 disabled=no list=novpn.ipv6
