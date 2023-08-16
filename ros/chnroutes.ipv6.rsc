@@ -824,7 +824,6 @@ add address=2402:ef40::/32 disabled=no list=chnroutes.ipv6
 add address=2402:ef80::/32 disabled=no list=chnroutes.ipv6
 add address=2402:f000::/32 disabled=no list=chnroutes.ipv6
 add address=2402:f140::/32 disabled=no list=chnroutes.ipv6
-add address=2402:f3c0::/32 disabled=no list=chnroutes.ipv6
 add address=2402:f480::/32 disabled=no list=chnroutes.ipv6
 add address=2402:f540::/32 disabled=no list=chnroutes.ipv6
 add address=2402:f580::/32 disabled=no list=chnroutes.ipv6
