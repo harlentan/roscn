@@ -5204,6 +5204,7 @@ add address=103.255.136.0/22 disabled=no list=novpn
 add address=103.255.140.0/22 disabled=no list=novpn
 add address=103.255.184.0/22 disabled=no list=novpn
 add address=103.255.200.0/22 disabled=no list=novpn
+add address=103.255.208.0/23 disabled=no list=novpn
 add address=103.255.212.0/22 disabled=no list=novpn
 add address=103.255.228.0/22 disabled=no list=novpn
 add address=106.0.0.0/24 disabled=no list=novpn
