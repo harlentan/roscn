@@ -470,6 +470,7 @@ add address=2401:3380::/32 disabled=no list=novpn.ipv6
 add address=2401:33c0::/32 disabled=no list=novpn.ipv6
 add address=2401:3440::/32 disabled=no list=novpn.ipv6
 add address=2401:3480::/32 disabled=no list=novpn.ipv6
+add address=2401:34a0::/32 disabled=no list=novpn.ipv6
 add address=2401:34c0::/32 disabled=no list=novpn.ipv6
 add address=2401:3640::/32 disabled=no list=novpn.ipv6
 add address=2401:3780::/32 disabled=no list=novpn.ipv6
