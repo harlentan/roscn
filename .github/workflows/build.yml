@@ -10,7 +10,7 @@ on:
     
   workflow_dispatch:
   schedule:
-    - cron: '00 14 * * *'
+    - cron: '05 8 * * *'
 
 jobs:
   build:
@@ -37,15 +37,9 @@ jobs:
 
       - name: Check CN ip list size
         run: |
-          if [[ $(wc -l ./address-list.rsc) < 3000 ]];
-          then
+          if [[ $(wc -l < ./address-list.rsc | xargs) < 3000 || $(wc -l < ./address-list.ipv6.rsc | xargs) < 1000 ]]; then
+          echo "The size of ip list is not in the right range!"
           exit 1
-          fi
-          
-        
-          if [[ $(wc -l < ./address-list.ipv6.rsc) < 1000 ]];
-          then
-          exit 2
           fi
 
       - name: Check current github event and ref
