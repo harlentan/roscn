@@ -48,13 +48,13 @@ jobs:
 
       - name: Checkout ip-lists branch
         uses: actions/checkout@v3
-        if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master'
         with:
           ref: ip-lists
           path: ip-lists
 
       - name: Upload
-        if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master'
         run: |
           rm -rf ip-lists/ros || true
           mkdir ip-lists/ros || true
