@@ -1,12 +1,12 @@
 #!/bin/bash
 
-bucket=$1
-file=$2
-path=$3
+bucket=$MINIO_BUCKET
+file=$1
+path=$2
 
-host=$4
-s3_key=$5
-s3_secret=$6
+host=$MINIO_ENDPOINT
+s3_key=$MINIO_KEY
+s3_secret=$MINIO_SECRET
 
 
 resource="/${bucket}/${path}"

@@ -71,5 +71,15 @@ jobs:
             npm publish
             git push -q
           fi
+          bash ../scripts/minio_upload.sh $PWD/ros/address-list.rsc public/address-list.rsc
+          bash ../scripts/minio_upload.sh $PWD/ros/address-list.ipv6.rsc public/address-list.rsc
+          bash ../scripts/minio_upload.sh $PWD/ros/CNIPv4Md5 public/CNIPv4Md5
+          bash ../scripts/minio_upload.sh $PWD/ros/CNIPv6Md5 public/CNIPv6Md5
+
+
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          MINIO_BUCKET: ${{secrets.MINIO_OSS_BUCKET}}
+          MINIO_KEY: ${{secrets.MINIO_USER}}
+          MINIO_SECRET: ${{secrets.MINIO_SECRET}}
+          MINIO_ENDPOINT: ${{secrets.MINIO_ENDPOINT}}
