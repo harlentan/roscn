@@ -67,8 +67,6 @@ jobs:
             git config user.email github-actions@github.com
             git add .
             git commit -m "update $(date +%Y-%m-%d)"
-            npm version patch
-            npm publish
             git push -q
 
             bash ../scripts/minio_upload.sh $PWD/ros/address-list.rsc public/address-list.rsc
@@ -79,7 +77,6 @@ jobs:
 
 
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           MINIO_BUCKET: ${{secrets.MINIO_OSS_BUCKET}}
           MINIO_KEY: ${{secrets.MINIO_USER}}
           MINIO_SECRET: ${{secrets.MINIO_SECRET}}
