@@ -55,7 +55,7 @@ jobs:
 
       - name: CheckStatus
         run: |
-          if [[ $(curl https://${{secrets.MINIO_ENDPOINT}}/${{secrets.MINIO_OSS_BUCKET}}/public/status) != "okay"]]; then
+          if [[ $(curl https://${{secrets.MINIO_ENDPOINT}}/${{secrets.MINIO_OSS_BUCKET}}/public/status) != "okay" ]]; then
           exit 1
           fi
 
