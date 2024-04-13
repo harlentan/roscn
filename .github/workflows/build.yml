@@ -53,13 +53,6 @@ jobs:
           ref: ip-lists
           path: ip-lists
 
-      - name: CheckStatus
-        run: |
-          if [[ $(curl https://${{secrets.MINIO_ENDPOINT}}/${{secrets.MINIO_OSS_BUCKET}}/public/status) != "okay" ]]; then
-          echo "remote server status check failed"
-          exit 1
-          fi
-
       - name: Upload
         if: github.ref == 'refs/heads/master'
         run: |
