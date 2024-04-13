@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: GenerateCNIP
+name: StatusCheck
 
 on:
   push:
