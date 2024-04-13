@@ -55,7 +55,7 @@ jobs:
 
       - name: CheckServiceStatus
         run: |
-          curl https://$MINIO_ENDPOINT$MINIO_BUCKET/public/status
+          curl https://$MINIO_ENDPOINT/${MINIO_BUCKET}/public/status
 
       - name: Upload
         if: github.ref == 'refs/heads/master'
