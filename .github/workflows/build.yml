@@ -55,7 +55,9 @@ jobs:
 
       - name: CheckStatus
         run: |
-          curl https://${{secrets.MINIO_ENDPOINT}}/${{secrets.MINIO_OSS_BUCKET}}/public/status
+          if [[ $(curl https://${{secrets.MINIO_ENDPOINT}}/${{secrets.MINIO_OSS_BUCKET}}/public/status) != "okay"]]; then
+          exit 1
+          fi
 
       - name: Upload
         if: github.ref == 'refs/heads/master'
