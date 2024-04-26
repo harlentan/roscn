@@ -9,6 +9,8 @@ make_ros() {
     echo "add address=10.0.0.0/8 disabled=no list=$name"
     echo "add address=172.16.0.0/12 disabled=no list=$name"
     echo "add address=192.168.0.0/16 disabled=no list=$name"
+    echo "add address=159.148.147.0/24 disabled=no list=$name"
+    echo "add address=159.148.172.0/24 disabled=no list=$name"
   fi
   while read line; do
     echo "add address=$line disabled=no list=$name"
