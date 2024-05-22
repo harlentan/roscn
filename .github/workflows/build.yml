@@ -19,7 +19,7 @@ jobs:
       - name: Install dependences
         run: |
           sudo apt-get update
-          sudo apt-get -y install wget
+          sudo apt-get -y install openssl wget
 
       - name: Checkout
         uses: actions/checkout@v4
