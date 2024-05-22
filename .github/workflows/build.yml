@@ -16,6 +16,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Install dependences
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install wget
+
       - name: Checkout
         uses: actions/checkout@v4
 
