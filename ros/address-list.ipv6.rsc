@@ -5,6 +5,7 @@ add address=2001:250::/35 disabled=no list=novpn.ipv6
 add address=2001:250:2000::/35 disabled=no list=novpn.ipv6
 add address=2001:250:4000::/34 disabled=no list=novpn.ipv6
 add address=2001:250:8000::/33 disabled=no list=novpn.ipv6
+add address=2001:251::/32 disabled=no list=novpn.ipv6
 add address=2001:252::/32 disabled=no list=novpn.ipv6
 add address=2001:253::/32 disabled=no list=novpn.ipv6
 add address=2001:254::/32 disabled=no list=novpn.ipv6
