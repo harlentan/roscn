@@ -77,6 +77,9 @@ jobs:
             npm version prerelease
             npm publish
             git push -q
+          else
+            echo "There is nothing changed since the ip lists have been generated last time."
+            echo "Skip roscni version bumping and commit"
           fi
           
         env:
