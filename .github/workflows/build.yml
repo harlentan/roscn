@@ -24,12 +24,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup tmate session
-        timeout-minutes: 15
-        uses: mxschmitt/action-tmate@v3
-        with:
+      #- name: Setup tmate session
+      #  timeout-minutes: 0.5
+      #  uses: mxschmitt/action-tmate@v3
+      #  with:
           ## limits ssh access and adds the ssh public key for the user which triggered the workflow
-          limit-access-to-actor: true
+      #    limit-access-to-actor: true
 
       - name: Setup Node and NPM
         uses: actions/setup-node@v4
