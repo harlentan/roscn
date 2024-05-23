@@ -83,13 +83,6 @@ jobs:
             npm publish
             git push -q
           fi
-
-          #if [[ $(curl https://${{secrets.MINIO_ENDPOINT}}/${{secrets.MINIO_OSS_BUCKET}}/public/status) == "okay" ]]; then
-          #  bash ../scripts/minio_upload.sh $PWD/ros/address-list.rsc public/address-list.rsc
-          #  bash ../scripts/minio_upload.sh $PWD/ros/address-list.ipv6.rsc public/address-list.ipv6.rsc
-          #  bash ../scripts/minio_upload.sh $PWD/ros/CNIPv4Md5 public/CNIPv4Md5
-          #  bash ../scripts/minio_upload.sh $PWD/ros/CNIPv6Md5 public/CNIPv6Md5
-          #fi
           
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
