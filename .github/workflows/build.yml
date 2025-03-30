@@ -67,8 +67,8 @@ jobs:
           mkdir ip-lists/ros || true
           mv ./*.rsc ip-lists/ros/
           cd ip-lists
-          md5sum ./ros/address-list.rsc | awk '{print $1}' > ./ros/CNIPv4Md5
-          md5sum ./ros/address-list.ipv6.rsc | awk '{print $1}' > ./ros/CNIPv6Md5
+          md5sum ./ros/address-list.rsc | awk '{print $1}' > ./ros/CNIPv4Md5.txt
+          md5sum ./ros/address-list.ipv6.rsc | awk '{print $1}' > ./ros/CNIPv6Md5.txt
           if [[ $(git status .) != *"nothing to commit"* ]]; then
             git config user.name GitHub Actions
             git config user.email github-actions@github.com
