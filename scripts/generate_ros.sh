@@ -11,6 +11,14 @@ make_ros() {
     echo "add address=192.168.0.0/16 disabled=no list=$name"
     echo "add address=159.148.147.0/24 disabled=no list=$name"
     echo "add address=159.148.172.0/24 disabled=no list=$name"
+
+    # Apple ip list. DO NOT USE vpn for Apple Services
+    echo "add address=17.0.0.0/8 disabled=no list=$name"
+    echo "add address=144.178.0.0/18 disabled=no list=$name"
+    echo "add address=192.35.50.0/24 disabled=no list=$name"
+    echo "add address=198.183.16.0/23 disabled=no list=$name"
+    echo "add address=204.179.120.0/24 disabled=no list=$name"
+    echo "add address=205.180.175.0/24 disabled=no list=$name"
   fi
   while read line; do
     echo "add address=$line disabled=no list=$name"
