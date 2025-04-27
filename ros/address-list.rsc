@@ -5,6 +5,12 @@ add address=172.16.0.0/12 disabled=no list=novpn
 add address=192.168.0.0/16 disabled=no list=novpn
 add address=159.148.147.0/24 disabled=no list=novpn
 add address=159.148.172.0/24 disabled=no list=novpn
+add address=17.0.0.0/8 disabled=no list=novpn
+add address=144.178.0.0/18 disabled=no list=novpn
+add address=192.35.50.0/24 disabled=no list=novpn
+add address=198.183.16.0/23 disabled=no list=novpn
+add address=204.179.120.0/24 disabled=no list=novpn
+add address=205.180.175.0/24 disabled=no list=novpn
 add address=1.0.1.0/24 disabled=no list=novpn
 add address=1.0.2.0/23 disabled=no list=novpn
 add address=1.0.8.0/21 disabled=no list=novpn
