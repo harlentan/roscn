@@ -1,6 +1,6 @@
 {
   "name": "roscni",
-  "version": "1.0.48-161",
+  "version": "1.0.48-162",
   "description": "ros cn ips rsc",
   "main": "index.js",
   "scripts": {
