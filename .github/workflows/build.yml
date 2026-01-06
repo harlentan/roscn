@@ -12,9 +12,9 @@ on:
   schedule:
     - cron: '30 19 * * *'
 
-permissions:
-  id-token: write  # Required for OIDC
-  contents: read
+# permissions:
+#   id-token: write  # Required for OIDC
+#   contents: read
 
 jobs:
   build:
@@ -79,7 +79,7 @@ jobs:
             git add .
             git commit -m "update $(date +%Y-%m-%d)"
             npm version prerelease
-            npm publish
+            # npm publish
             git push -q
           else
             echo "There is nothing changed since the ip lists have been generated last time."
