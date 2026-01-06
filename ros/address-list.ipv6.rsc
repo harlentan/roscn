@@ -27,7 +27,6 @@ add address=2001:df0:423::/48 disabled=no list=novpn.ipv6
 add address=2001:df0:9c0::/48 disabled=no list=novpn.ipv6
 add address=2001:df0:1bc0::/48 disabled=no list=novpn.ipv6
 add address=2001:df0:25c0::/48 disabled=no list=novpn.ipv6
-add address=2001:df0:26c0::/48 disabled=no list=novpn.ipv6
 add address=2001:df0:2e00::/48 disabled=no list=novpn.ipv6
 add address=2001:df0:2e80::/48 disabled=no list=novpn.ipv6
 add address=2001:df0:59c0::/48 disabled=no list=novpn.ipv6
@@ -71,7 +70,6 @@ add address=2001:df4:3d80::/48 disabled=no list=novpn.ipv6
 add address=2001:df4:4b80::/48 disabled=no list=novpn.ipv6
 add address=2001:df4:4d80::/48 disabled=no list=novpn.ipv6
 add address=2001:df4:a1c0::/48 disabled=no list=novpn.ipv6
-add address=2001:df4:a980::/48 disabled=no list=novpn.ipv6
 add address=2001:df4:c180::/48 disabled=no list=novpn.ipv6
 add address=2001:df4:c580::/48 disabled=no list=novpn.ipv6
 add address=2001:df4:e140::/48 disabled=no list=novpn.ipv6
@@ -732,6 +730,7 @@ add address=2402:3de0::/32 disabled=no list=novpn.ipv6
 add address=2402:3e00::/32 disabled=no list=novpn.ipv6
 add address=2402:3ec0::/32 disabled=no list=novpn.ipv6
 add address=2402:3f80::/32 disabled=no list=novpn.ipv6
+add address=2402:4060::/32 disabled=no list=novpn.ipv6
 add address=2402:4140::/32 disabled=no list=novpn.ipv6
 add address=2402:42c0::/32 disabled=no list=novpn.ipv6
 add address=2402:4340::/32 disabled=no list=novpn.ipv6
@@ -1061,7 +1060,6 @@ add address=2403:7540::/32 disabled=no list=novpn.ipv6
 add address=2403:7580::/32 disabled=no list=novpn.ipv6
 add address=2403:76c0::/32 disabled=no list=novpn.ipv6
 add address=2403:7700::/32 disabled=no list=novpn.ipv6
-add address=2403:7840::/32 disabled=no list=novpn.ipv6
 add address=2403:78c0::/32 disabled=no list=novpn.ipv6
 add address=2403:7a80::/32 disabled=no list=novpn.ipv6
 add address=2403:7b00::/32 disabled=no list=novpn.ipv6
@@ -1792,7 +1790,6 @@ add address=2406:bb80::/32 disabled=no list=novpn.ipv6
 add address=2406:bc80::/32 disabled=no list=novpn.ipv6
 add address=2406:bd40::/32 disabled=no list=novpn.ipv6
 add address=2406:bd80::/32 disabled=no list=novpn.ipv6
-add address=2406:bdc0::/32 disabled=no list=novpn.ipv6
 add address=2406:be80::/32 disabled=no list=novpn.ipv6
 add address=2406:bf80::/32 disabled=no list=novpn.ipv6
 add address=2406:c080::/32 disabled=no list=novpn.ipv6
