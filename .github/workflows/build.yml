@@ -12,6 +12,10 @@ on:
   schedule:
     - cron: '30 19 * * *'
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
